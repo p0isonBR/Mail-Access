@@ -54,7 +54,7 @@ print(f'''{G}*By PoisonBR
 {B}██║╚██╔╝██║██╔══██║██║██║{G}v1.0{C} ██╔══██║██║     ██║     ██╔══╝  ╚════██║╚════██║
 {B}██║ ╚═╝ ██║██║  ██║██║███████╗{C}██║  ██║╚██████╗╚██████╗███████╗███████║███████║
 {B}╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚══════╝{C}╚═╝  ╚═╝ ╚═════╝ ╚═════╝╚══════╝╚══════╝╚══════╝
-{IB} Não funcional em grandes dominios (ex gmail), por fatores de segurança adicional.
+{IY} Não funcional em grandes dominios (ex gmail), por fatores de segurança adicional.
 ''')
 
 db=open(input(f'{MG} Indique o caminho do arquivo: {B}'), 'r').read().splitlines()
