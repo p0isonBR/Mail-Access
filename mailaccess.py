@@ -66,7 +66,15 @@ def checker(email, senha, c):
         print('E-mails verificados: '+c+', e-mails restantes: '+len(db)-c)
 c=0        
 for combo in db:
-    email=combo.split(':')[1]
-    senha=combo.split(':')[2]
+  if (':') in combo:
+    email=combo.split(':')[0]
+    senha=combo.split(':')[1]
     c=c+1
     checker(email, senha, c)
+  elif ('|') in combo:
+    email=combo.split('|')[0]
+    senha=combo.split('|')[1]
+    c=c+1
+    checker(email, senha, c)
+  else:
+    print('Combo inválido: '+combo)
