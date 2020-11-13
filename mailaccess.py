@@ -60,7 +60,7 @@ print(f'''{G}*By PoisonBR
 db=open(input(f'{MG} Indique o caminho do arquivo: {B}'), 'r').read().splitlines()
 print(IB+' '+G+str(len(db))+C+' e-mails no arquivo.'); time.sleep(3)
 print()
-txt=input(f'{EB} Defina o nome do novo arquivo de saida:{B} ')
+txt=input(f'{MG} Defina o nome do novo arquivo de saida:{B} ')
 print()
 print(f'''{AG} Testando credenciais, aguarde...
 ''')
