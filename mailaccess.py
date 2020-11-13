@@ -94,7 +94,7 @@ for combo in db:
   else:
     print(f'{MR}Combo inválido: '+R+combo+C)
 v=len(open(txt+'.txt', 'r').read().splitlines())
-print(f'{IB} Operação finalizada: '+B+str(ldb)+C+' e-mails verificados; '+G+str(v)+C+' credenciais válidas.')
+print(f'{IB} Operação finalizada: '+B+str(ldb)+C+' e-mails verificados. '+G+str(v)+C+' credenciais válidas.')
 print()
 print(f'{MG} Arquivo salvo em: '+B+txt+'.txt'); time.sleep(2)
 print()
