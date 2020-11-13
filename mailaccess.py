@@ -86,7 +86,7 @@ for combo in db:
     email=combo.split(':')[0]
     senha=combo.split(':')[1]
     c=c+1
-    checker(email, senha, c, v, ldb, txt)
+    checker(email, senha, c, ldb, txt)
   elif ('|') in combo:
     email=combo.split('|')[0]
     senha=combo.split('|')[1]
