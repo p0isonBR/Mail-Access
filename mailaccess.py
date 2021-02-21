@@ -1,10 +1,16 @@
-import requests, time, os, threading, sys
+import requests
+import time
+import subprocess
+import threading
+import sys
 from requests.exceptions import ConnectionError
 
 R='\033[1;31m'; B='\033[1;34m'; C='\033[1;37m'; Y='\033[1;33m'; G='\033[1;32m'; RT='\033[;0m'
 EG=f'{C}[{G}!{C}]'; MG=f'{C}[{G}+{C}]'; MR=f'{C}[{R}-{C}]'; AG=f'{C}[{G}*{C}]'; IB=f'{C}[{B}i{C}]'; EB=f'{C}[{B}!{C}]'; EY=f'{C}[{Y}!{C}]'; IY=f'{C}[{Y}i{C}]'
 
-os.system('git pull && clear')
+print(f'{G}Checando por atualizacoes... {C}')
+
+up = subprocess.run(["git", "pull"])
 
 print(f'''{C}
                             /+osyhhhhhhyys++/
