@@ -13,6 +13,7 @@ print(f'{G}Checando por atualizacoes... {C}')
 
 up = subprocess.run(["git", "pull"])
 print(up.returncode)
+input()
 
 print(f'''{C}
                             /+osyhhhhhhyys++/
