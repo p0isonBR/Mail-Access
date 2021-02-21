@@ -1,5 +1,6 @@
 import requests
 import time
+import os
 import subprocess
 import threading
 import sys
@@ -11,6 +12,7 @@ EG=f'{C}[{G}!{C}]'; MG=f'{C}[{G}+{C}]'; MR=f'{C}[{R}-{C}]'; AG=f'{C}[{G}*{C}]'; 
 print(f'{G}Checando por atualizacoes... {C}')
 
 up = subprocess.run(["git", "pull"])
+print(up.returncode)
 
 print(f'''{C}
                             /+osyhhhhhhyys++/
