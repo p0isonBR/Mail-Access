@@ -23,7 +23,7 @@ IY=f'{C}[{Y}i{C}]'
 
 print(f'{AG}{G}Checando por atualizacoes... {C}')
 
-update = subprocess.check_output('git pull', shell=False)
+update = subprocess.check_output('git pull', shell=True)
 
 if 'Already up to date' not in update.decode():
     print('atualizacao instalada!\nReiciando app...')
@@ -101,6 +101,15 @@ for x in range(4):
 	sys.stdout.write("\033[F")
 	if x==3:
 		print(f'{AG} Testando credenciais, aguarde'+'.'*x, '\n\n')
+update = subprocess.check_output('git pull', shell=False)
+
+if 'Already up to date' not in update.decode():
+    print('atualizacao instalada!\nReiciando app...')
+    subprocess.run('clear')
+    python = sys.executable
+    os.execl(python, python, *sys.argv)
+else:
+    print('Nenhuma atualizacao disponivel.')
 
 def checker(IB, B, MG, EG, G, C, email, senha, c, ldb, txt, v):
 	sema.acquire()
