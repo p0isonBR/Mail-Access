@@ -27,7 +27,7 @@ update = subprocess.check_output('git pull', shell=True)
 
 if 'Already up to date' not in update.decode():
     print(f'{MG} Atualizacao instalada!\nReiciando app...')
-    time.sleep(2)
+    time.sleep(5)
     subprocess.run('clear')
     python = sys.executable
     os.execl(python, python, *sys.argv)
