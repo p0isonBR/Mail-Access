@@ -21,11 +21,18 @@ EB=f'{C}[{B}!{C}]'
 EY=f'{C}[{Y}!{C}]'
 IY=f'{C}[{Y}i{C}]'
 
-print(f'{G}Checando por atualizacoes... {C}')
+print(f'{AG}{G}Checando por atualizacoes... {C}')
 
-up = subprocess.run(["git", "pull"])
-print(up.returncode)
-input()
+update = subprocess.check_output('git pull', shell=False)
+
+if 'Already up to date' not in update.decode():
+    print('atualizacao instalada!\nReiciando app...')
+    subprocess.run('clear')
+    python = sys.executable
+    os.execl(python, python, *sys.argv)
+else:
+    print('Nenhuma atualizacao disponivel.')
+    time.sleep(2)
 
 print(f'''{C}
                             /+osyhhhhhhyys++/
